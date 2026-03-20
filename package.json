@@ -1,0 +1,32 @@
+{
+  "name": "backend-estudiantes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon.js src/server.js",
+    "start": "node src/server.js",
+    "seed": "node src/seeders/seed.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joseleonardo1995/Node_Grupo2_Estudiantes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joseleonardo1995/Node_Grupo2_Estudiantes/issues"
+  },
+  "homepage": "https://github.com/joseleonardo1995/Node_Grupo2_Estudiantes#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mysql2": "^3.19.1",
+    "sequelize": "^6.37.8"
+  }
+}
