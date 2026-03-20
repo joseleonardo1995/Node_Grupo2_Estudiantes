@@ -94,7 +94,7 @@ const actualizarUsuario = async (req, res)=> {
             actualizar.password = await passwordHash(password);
         }
 
-        await User.update(actualizar);
+        await User.update(actualizar, { where: { id } });
 
         const usuarioActualizado = await User.findByPk(id, {
             attributes: { exclude: ['password']},
@@ -110,13 +110,14 @@ const actualizarUsuario = async (req, res)=> {
 
 const borrarUsuario = async (req, res)=> {
     try {
+        const { id } = req.params;
         const usuario = await User.findByPk(id);
 
         if (!usuario) {
-            return respuestaErronea(res, 404, 'Usuario no encontrado,');
+            return respuestaErronea(res, 404, 'Usuario no encontrado.');
         }
 
-        usuario.destroy();
+        await usuario.destroy();
         return respuestaExitosa(res, 200, 'El usuario ha sido eliminado.', null);
 
     } catch (error) {
